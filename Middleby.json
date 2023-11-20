@@ -1,0 +1,1153 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-11-20T13:15:58.975Z",
+  "__export_source": "insomnia.desktop.app:v8.4.2",
+  "resources": [
+    {
+      "_id": "req_77313353567c4801b4a086a6c44b4753",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1679568085383,
+      "created": 1679568085383,
+      "url": "{{ _.base_url }}/api/oauth/v1/token",
+      "name": "Login",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"grant_type\": \"password\",\n\t\"username\": \"specifi_8739\",\n\t\"password\": \"1e69dc24c\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "useISO88591": false,
+        "disabled": false,
+        "username": "18_2uxwzosv5csgg8wgsgws8wcggowgw8kgccgwk40cko4884swo8",
+        "password": "rjko7dan5pw8swoo8sswog4ows0ks8o0k8goks48w48wow4os"
+      },
+      "metaSortKey": -1679568085383,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "parentId": null,
+      "modified": 1679567960046,
+      "created": 1679567960046,
+      "name": "Middleby",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_1c9be90649cf435ba21ef9abccf20852",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1679569175168,
+      "created": 1679569175168,
+      "url": "{{ _.base_url }}/api/rest/v1/products",
+      "name": "Search by ULINE",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_971eaaef7d1c4c82bfe75ab5086b3990",
+          "name": "scope",
+          "value": "default",
+          "description": ""
+        },
+        {
+          "id": "pair_d8041707fee148c793eff55f0302da76",
+          "name": "pagination_type",
+          "value": "page",
+          "description": ""
+        },
+        {
+          "id": "pair_c278e6aa37d04a0f9a8949a823fd1cd6",
+          "name": "limit",
+          "value": "100",
+          "description": ""
+        },
+        {
+          "id": "pair_a3cacfaa6f064a71ab871bd6a9d6e790",
+          "name": "page",
+          "value": "1",
+          "description": ""
+        },
+        {
+          "id": "pair_1a4ed60f2cf1498faa0fe25a3f27fcdc",
+          "name": "search",
+          "value": "{\n  \"identifier\": [\n    {\n      \"operator\": \"STARTS WITH\",\n      \"value\": \"U-LINE\"\n    }\n  ],\n  \"enabled\": [\n    {\n      \"operator\": \"=\",\n      \"value\": true\n    }\n  ],\n  \"Residential_or_Commercial_Use\": [\n    {\n      \"operator\": \"IN\",\n      \"value\": [\n        \"Commercial_Use\"\n      ]\n    }\n  ]\n}",
+          "description": "",
+          "disabled": false,
+          "type": "text",
+          "multiline": true
+        },
+        {
+          "id": "pair_919c3056fb344215827ab361fa7c6399",
+          "name": "with_attribute_options",
+          "value": "true",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_cc611dfdf94e40349d919ade4ac90d42",
+          "name": "with_count",
+          "value": "true",
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "id": "pair_41cf838188d942598371356b1bd1f7c4",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_77313353567c4801b4a086a6c44b4753', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}",
+        "disabled": false
+      },
+      "metaSortKey": -1685530167770.375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_152eb92607cd4869a19117c501b9acba",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1692964785211,
+      "created": 1692964785211,
+      "url": "{{ _.base_url }}/api/oauth/v1/token",
+      "name": "Login Refresh",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"grant_type\": \"refresh_token\",\n\t\"refresh_token\": \"NjQwMzUzY2U5OThlODFkYTljMzE0OTU3NmRhZjE1NGYzYmY4Zjk5YjZhMTQzNmI2YzE3ZDdiZWVkZGQ4Mjg3Nw\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "useISO88591": false,
+        "disabled": false,
+        "username": "18_2uxwzosv5csgg8wgsgws8wcggowgw8kgccgwk40cko4884swo8",
+        "password": "rjko7dan5pw8swoo8sswog4ows0ks8o0k8goks48w48wow4os"
+      },
+      "metaSortKey": -1679245688006.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f8c7cf43ed1741f68a71b1898f022f2e",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1693001512169,
+      "created": 1693001512169,
+      "url": "{{ _.base_url }}/api/rest/v1/products",
+      "name": "Search 2",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_971eaaef7d1c4c82bfe75ab5086b3990",
+          "name": "scope",
+          "value": "default",
+          "description": ""
+        },
+        {
+          "id": "pair_d8041707fee148c793eff55f0302da76",
+          "name": "pagination_type",
+          "value": "page",
+          "description": ""
+        },
+        {
+          "id": "pair_c278e6aa37d04a0f9a8949a823fd1cd6",
+          "name": "limit",
+          "value": "100",
+          "description": ""
+        },
+        {
+          "id": "pair_a3cacfaa6f064a71ab871bd6a9d6e790",
+          "name": "page",
+          "value": "1",
+          "description": ""
+        },
+        {
+          "id": "pair_1a4ed60f2cf1498faa0fe25a3f27fcdc",
+          "name": "search",
+          "value": "{\n  \"identifier\": [\n    {\n      \"operator\": \"STARTS WITH\",\n      \"value\": \"Doyon\"\n    }\n  ],\n  \"enabled\": [\n    {\n      \"operator\": \"=\",\n      \"value\": true\n    }\n  ],\n  \"Residential_or_Commercial_Use\": [\n    {\n      \"operator\": \"IN\",\n      \"value\": [\n        \"Commercial_Use\"\n      ]\n    }\n  ]\n}",
+          "description": "",
+          "disabled": false,
+          "type": "text",
+          "multiline": true
+        },
+        {
+          "id": "pair_c762c07076ed4b77af63d27f544ed18f",
+          "name": "with_attribute_options",
+          "value": "true",
+          "description": ""
+        },
+        {
+          "id": "pair_ede12a8f355d48c4ace7338e769868c8",
+          "name": "with_count",
+          "value": "true",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "id": "pair_41cf838188d942598371356b1bd1f7c4",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_77313353567c4801b4a086a6c44b4753', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}",
+        "disabled": false
+      },
+      "metaSortKey": -1678600893254.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_273266eb3aea48aa89956388ef02aeb5",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1693340033147,
+      "created": 1693340033147,
+      "url": "{{ _.base_url }}/api/rest/v1/products",
+      "name": "Search mricp",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_971eaaef7d1c4c82bfe75ab5086b3990",
+          "name": "scope",
+          "value": "default",
+          "description": ""
+        },
+        {
+          "id": "pair_d8041707fee148c793eff55f0302da76",
+          "name": "pagination_type",
+          "value": "page",
+          "description": ""
+        },
+        {
+          "id": "pair_c278e6aa37d04a0f9a8949a823fd1cd6",
+          "name": "limit",
+          "value": "100",
+          "description": ""
+        },
+        {
+          "id": "pair_a3cacfaa6f064a71ab871bd6a9d6e790",
+          "name": "page",
+          "value": "5",
+          "description": ""
+        },
+        {
+          "id": "pair_1a4ed60f2cf1498faa0fe25a3f27fcdc",
+          "name": "search",
+          "value": "{\"electrical_voltage\":[{\"operator\":\"NOT EMPTY\",\"value\":[],\"locale\":\"en_US\",\"scope\":\"default\"}]}",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "id": "pair_41cf838188d942598371356b1bd1f7c4",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_77313353567c4801b4a086a6c44b4753', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}",
+        "disabled": false
+      },
+      "metaSortKey": -1678439694566.125,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_7d74611bc5754bb3b9a66b91c7da647b",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1693340099190,
+      "created": 1693340099190,
+      "url": "{{ _.base_url }}/api/rest/v1/products",
+      "name": "Search sku_",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_971eaaef7d1c4c82bfe75ab5086b3990",
+          "name": "scope",
+          "value": "default",
+          "description": ""
+        },
+        {
+          "id": "pair_d8041707fee148c793eff55f0302da76",
+          "name": "pagination_type",
+          "value": "page",
+          "description": ""
+        },
+        {
+          "id": "pair_c278e6aa37d04a0f9a8949a823fd1cd6",
+          "name": "limit",
+          "value": "100",
+          "description": ""
+        },
+        {
+          "id": "pair_a3cacfaa6f064a71ab871bd6a9d6e790",
+          "name": "page",
+          "value": "1",
+          "description": ""
+        },
+        {
+          "id": "pair_1a4ed60f2cf1498faa0fe25a3f27fcdc",
+          "name": "search",
+          "value": "{\"sku_\":[{\"operator\":\"NOT EMPTY\",\"value\":[],\"locale\":\"en_US\",\"scope\":\"default\"}]}",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "id": "pair_41cf838188d942598371356b1bd1f7c4",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_77313353567c4801b4a086a6c44b4753', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}",
+        "disabled": false
+      },
+      "metaSortKey": -1678359095222.0625,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_09353cafd6be4e8f8c625083a82cd6dd",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1693340136838,
+      "created": 1693340136838,
+      "url": "{{ _.base_url }}/api/rest/v1/products",
+      "name": "Search eletrical info",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_971eaaef7d1c4c82bfe75ab5086b3990",
+          "name": "scope",
+          "value": "default",
+          "description": ""
+        },
+        {
+          "id": "pair_d8041707fee148c793eff55f0302da76",
+          "name": "pagination_type",
+          "value": "page",
+          "description": ""
+        },
+        {
+          "id": "pair_c278e6aa37d04a0f9a8949a823fd1cd6",
+          "name": "limit",
+          "value": "100",
+          "description": ""
+        },
+        {
+          "id": "pair_a3cacfaa6f064a71ab871bd6a9d6e790",
+          "name": "page",
+          "value": "1",
+          "description": ""
+        },
+        {
+          "id": "pair_1a4ed60f2cf1498faa0fe25a3f27fcdc",
+          "name": "search",
+          "value": "{\"sku_\":[{\"operator\":\"NOT EMPTY\",\"value\":[],\"locale\":\"en_US\",\"scope\":\"default\"}]}",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "id": "pair_41cf838188d942598371356b1bd1f7c4",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_77313353567c4801b4a086a6c44b4753', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}",
+        "disabled": false
+      },
+      "metaSortKey": -1678318795550.0312,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_a9bd5da2559f4c858cf69ce49bbc48cb",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1693410937180,
+      "created": 1693410937180,
+      "url": "{{ _.base_url }}/api/rest/v1/asset-families/brochure/assets/BKI_BLG_TC_Fryers_Brochure_1",
+      "name": "Search images",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_41cf838188d942598371356b1bd1f7c4",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_77313353567c4801b4a086a6c44b4753', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}",
+        "disabled": false
+      },
+      "metaSortKey": -1681805746137.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c2ffc700de7b4bfe9249f23419662147",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1698829884319,
+      "created": 1698829884319,
+      "url": "{{ _.base_url }}/api/rest/v1/attributes",
+      "name": "Search attributes",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_971eaaef7d1c4c82bfe75ab5086b3990",
+          "name": "scope",
+          "value": "default",
+          "description": ""
+        },
+        {
+          "id": "pair_d8041707fee148c793eff55f0302da76",
+          "name": "pagination_type",
+          "value": "page",
+          "description": ""
+        },
+        {
+          "id": "pair_c278e6aa37d04a0f9a8949a823fd1cd6",
+          "name": "limit",
+          "value": "100",
+          "description": ""
+        },
+        {
+          "id": "pair_a3cacfaa6f064a71ab871bd6a9d6e790",
+          "name": "page",
+          "value": "4",
+          "description": ""
+        },
+        {
+          "id": "pair_1a4ed60f2cf1498faa0fe25a3f27fcdc",
+          "name": "search",
+          "value": "{\n\n}",
+          "description": "",
+          "disabled": false,
+          "type": "text",
+          "multiline": true
+        },
+        {
+          "id": "pair_919c3056fb344215827ab361fa7c6399",
+          "name": "with_attribute_options",
+          "value": "true",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_cc611dfdf94e40349d919ade4ac90d42",
+          "name": "with_count",
+          "value": "true",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "id": "pair_41cf838188d942598371356b1bd1f7c4",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_77313353567c4801b4a086a6c44b4753', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}",
+        "disabled": false
+      },
+      "metaSortKey": -1680686915760.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_4d503fdaaeab43e38daf174397d75bb6",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1698830032527,
+      "created": 1698830032527,
+      "url": "{{ _.base_url }}/api/rest/v1/categories",
+      "name": "Search categories",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_971eaaef7d1c4c82bfe75ab5086b3990",
+          "name": "scope",
+          "value": "default",
+          "description": ""
+        },
+        {
+          "id": "pair_d8041707fee148c793eff55f0302da76",
+          "name": "pagination_type",
+          "value": "page",
+          "description": ""
+        },
+        {
+          "id": "pair_c278e6aa37d04a0f9a8949a823fd1cd6",
+          "name": "limit",
+          "value": "100",
+          "description": ""
+        },
+        {
+          "id": "pair_a3cacfaa6f064a71ab871bd6a9d6e790",
+          "name": "page",
+          "value": "1",
+          "description": ""
+        },
+        {
+          "id": "pair_1a4ed60f2cf1498faa0fe25a3f27fcdc",
+          "name": "search",
+          "value": "{\n\n}",
+          "description": "",
+          "disabled": false,
+          "type": "text",
+          "multiline": true
+        },
+        {
+          "id": "pair_919c3056fb344215827ab361fa7c6399",
+          "name": "with_attribute_options",
+          "value": "true",
+          "description": ""
+        },
+        {
+          "id": "pair_cc611dfdf94e40349d919ade4ac90d42",
+          "name": "with_count",
+          "value": "true",
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "id": "pair_41cf838188d942598371356b1bd1f7c4",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_77313353567c4801b4a086a6c44b4753', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}",
+        "disabled": false
+      },
+      "metaSortKey": -1680127500571.625,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_3770d74a68e54e15826eab0e5dcfd678",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1699050115318,
+      "created": 1699050115318,
+      "url": "{{ _.base_url }}/api/rest/v1/attributes/electrical_connection_type/options",
+      "name": "Search attributes",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_971eaaef7d1c4c82bfe75ab5086b3990",
+          "name": "scope",
+          "value": "default",
+          "description": ""
+        },
+        {
+          "id": "pair_d8041707fee148c793eff55f0302da76",
+          "name": "pagination_type",
+          "value": "page",
+          "description": ""
+        },
+        {
+          "id": "pair_c278e6aa37d04a0f9a8949a823fd1cd6",
+          "name": "limit",
+          "value": "100",
+          "description": ""
+        },
+        {
+          "id": "pair_a3cacfaa6f064a71ab871bd6a9d6e790",
+          "name": "page",
+          "value": "1",
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "id": "pair_41cf838188d942598371356b1bd1f7c4",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_77313353567c4801b4a086a6c44b4753', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}",
+        "disabled": false
+      },
+      "metaSortKey": -1680407208165.9375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_0f988aa959c84f7e97edcf793d2f3eb9",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1699270243154,
+      "created": 1699270243154,
+      "url": "{{ _.base_url }}/api/rest/v1/asset-families/",
+      "name": "Search images",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "id": "pair_41cf838188d942598371356b1bd1f7c4",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_77313353567c4801b4a086a6c44b4753', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}",
+        "disabled": false
+      },
+      "metaSortKey": -1681642333313.75,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_56b0ebe3cb5041b1a2702dc228a24d7f",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1699634309973,
+      "created": 1699634309973,
+      "url": "{{ _.base_url }}/api/rest/v1/products",
+      "name": "Search 2",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_971eaaef7d1c4c82bfe75ab5086b3990",
+          "name": "scope",
+          "value": "default",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_d8041707fee148c793eff55f0302da76",
+          "name": "pagination_type",
+          "value": "page",
+          "description": ""
+        },
+        {
+          "id": "pair_c278e6aa37d04a0f9a8949a823fd1cd6",
+          "name": "limit",
+          "value": "100",
+          "description": ""
+        },
+        {
+          "id": "pair_a3cacfaa6f064a71ab871bd6a9d6e790",
+          "name": "page",
+          "value": "1",
+          "description": ""
+        },
+        {
+          "id": "pair_1a4ed60f2cf1498faa0fe25a3f27fcdc",
+          "name": "search",
+          "value": "{\"identifier\":[{\"operator\":\"=\",\"value\":\"Synesso_S98601-3\"}]}",
+          "description": "",
+          "disabled": false,
+          "type": "text",
+          "multiline": true
+        },
+        {
+          "id": "pair_c762c07076ed4b77af63d27f544ed18f",
+          "name": "with_attribute_options",
+          "value": "true",
+          "description": ""
+        },
+        {
+          "id": "pair_ede12a8f355d48c4ace7338e769868c8",
+          "name": "with_count",
+          "value": "true",
+          "description": "",
+          "disabled": false
+        }
+      ],
+      "headers": [
+        {
+          "id": "pair_41cf838188d942598371356b1bd1f7c4",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_77313353567c4801b4a086a6c44b4753', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}",
+        "disabled": false
+      },
+      "metaSortKey": -1678520293910.1875,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_9ac6092076554afb9bef9967bf9e0639",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1699971276518,
+      "created": 1699971276518,
+      "url": "https://middleby-cdn.com/specsheets/Cooktek_B651_U2_specsheet_main_1.pdf",
+      "name": "Asset exists",
+      "description": "",
+      "method": "HEAD",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "User-Agent",
+          "value": "insomnia/8.4.1"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1699971276518,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_78552295859b47aeb9a1f616adf567d4",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1700060086036,
+      "created": 1700060086036,
+      "url": "{{ _.base_url }}/api/rest/v1/products",
+      "name": "Search for discountinued",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_971eaaef7d1c4c82bfe75ab5086b3990",
+          "name": "scope",
+          "value": "default",
+          "description": ""
+        },
+        {
+          "id": "pair_d8041707fee148c793eff55f0302da76",
+          "name": "pagination_type",
+          "value": "page",
+          "description": ""
+        },
+        {
+          "id": "pair_c278e6aa37d04a0f9a8949a823fd1cd6",
+          "name": "limit",
+          "value": "100",
+          "description": ""
+        },
+        {
+          "id": "pair_a3cacfaa6f064a71ab871bd6a9d6e790",
+          "name": "page",
+          "value": "1",
+          "description": ""
+        },
+        {
+          "id": "pair_1a4ed60f2cf1498faa0fe25a3f27fcdc",
+          "name": "search",
+          "value": "{\n  \"enabled\": [\n    {\n      \"operator\": \"=\",\n      \"value\": true\n    }\n  ],\n  \"product_discontinued\": [\n    {\n      \"operator\": \"=\",\n      \"value\": true\n    }\n  ],\n  \"Residential_or_Commercial_Use\": [\n    {\n      \"operator\": \"IN\",\n      \"value\": [\n        \"Commercial_Use\"\n      ]\n    }\n  ],\n  \"product_or_accessory\": [\n    {\n      \"operator\": \"IN\",\n      \"value\": [\n        \"product\"\n      ]\n    }\n  ]\n}",
+          "description": "",
+          "disabled": false,
+          "type": "text",
+          "multiline": true
+        },
+        {
+          "id": "pair_919c3056fb344215827ab361fa7c6399",
+          "name": "with_attribute_options",
+          "value": "true",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_cc611dfdf94e40349d919ade4ac90d42",
+          "name": "with_count",
+          "value": "true",
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "id": "pair_41cf838188d942598371356b1bd1f7c4",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_77313353567c4801b4a086a6c44b4753', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}",
+        "disabled": false
+      },
+      "metaSortKey": -1686127879896.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_2f1f9397f5b241448b48707a79d412f8",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1700061698686,
+      "created": 1700061698686,
+      "url": "{{ _.base_url }}/api/rest/v1/products",
+      "name": "Search by BEECH",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_971eaaef7d1c4c82bfe75ab5086b3990",
+          "name": "scope",
+          "value": "default",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_d8041707fee148c793eff55f0302da76",
+          "name": "pagination_type",
+          "value": "page",
+          "description": ""
+        },
+        {
+          "id": "pair_c278e6aa37d04a0f9a8949a823fd1cd6",
+          "name": "limit",
+          "value": "100",
+          "description": ""
+        },
+        {
+          "id": "pair_a3cacfaa6f064a71ab871bd6a9d6e790",
+          "name": "page",
+          "value": "1",
+          "description": ""
+        },
+        {
+          "id": "pair_1a4ed60f2cf1498faa0fe25a3f27fcdc",
+          "name": "search",
+          "value": "{\n  \"enabled\": [\n    {\n      \"operator\": \"=\",\n      \"value\": true\n    }\n  ],\n  \"identifier\": [\n    {\n      \"operator\": \"STARTS WITH\",\n      \"value\": \"Beech_DCK0850FG\"\n    }\n  ],\n  \"Residential_or_Commercial_Use\": [\n    {\n      \"operator\": \"IN\",\n      \"value\": [\n        \"Commercial_Use\"\n      ]\n    }\n  ]\n}",
+          "description": "",
+          "disabled": false,
+          "type": "text",
+          "multiline": true
+        },
+        {
+          "id": "pair_919c3056fb344215827ab361fa7c6399",
+          "name": "with_attribute_options",
+          "value": "true",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_cc611dfdf94e40349d919ade4ac90d42",
+          "name": "with_count",
+          "value": "true",
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "id": "pair_41cf838188d942598371356b1bd1f7c4",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_77313353567c4801b4a086a6c44b4753', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}",
+        "disabled": false
+      },
+      "metaSortKey": -1684932455644.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_83022ea92b28421c901956c9862b85bf",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1700061904667,
+      "created": 1700061904667,
+      "url": "{{ _.base_url }}/api/rest/v1/products",
+      "name": "Search by Synesso",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "id": "pair_971eaaef7d1c4c82bfe75ab5086b3990",
+          "name": "scope",
+          "value": "default",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_d8041707fee148c793eff55f0302da76",
+          "name": "pagination_type",
+          "value": "page",
+          "description": ""
+        },
+        {
+          "id": "pair_c278e6aa37d04a0f9a8949a823fd1cd6",
+          "name": "limit",
+          "value": "100",
+          "description": ""
+        },
+        {
+          "id": "pair_a3cacfaa6f064a71ab871bd6a9d6e790",
+          "name": "page",
+          "value": "1",
+          "description": ""
+        },
+        {
+          "id": "pair_1a4ed60f2cf1498faa0fe25a3f27fcdc",
+          "name": "search",
+          "value": "{\n  \"enabled\": [\n    {\n      \"operator\": \"=\",\n      \"value\": true\n    }\n  ],\n  \"identifier\": [\n    {\n      \"operator\": \"STARTS WITH\",\n      \"value\": \"Synesso\"\n    }\n  ],\n  \"Residential_or_Commercial_Use\": [\n    {\n      \"operator\": \"IN\",\n      \"value\": [\n        \"Commercial_Use\"\n      ]\n    }\n  ]\n}",
+          "description": "",
+          "disabled": false,
+          "type": "text",
+          "multiline": true
+        },
+        {
+          "id": "pair_919c3056fb344215827ab361fa7c6399",
+          "name": "with_attribute_options",
+          "value": "true",
+          "description": "",
+          "disabled": false
+        },
+        {
+          "id": "pair_cc611dfdf94e40349d919ade4ac90d42",
+          "name": "with_count",
+          "value": "true",
+          "description": ""
+        }
+      ],
+      "headers": [
+        {
+          "id": "pair_41cf838188d942598371356b1bd1f7c4",
+          "name": "Accept",
+          "value": "application/json",
+          "description": ""
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_77313353567c4801b4a086a6c44b4753', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'when-expired', 60 %}",
+        "disabled": false
+      },
+      "metaSortKey": -1684334743518.125,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_9d8e859abccf2cb81b15f12d1578ff5a71e09237",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1679567960050,
+      "created": 1679567960050,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": {},
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1679567960050,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_9d8e859abccf2cb81b15f12d1578ff5a71e09237",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1679567960051,
+      "created": 1679567960051,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_a055ec6f0a8b46b9a904454a9f2e3347",
+      "parentId": "wrk_e24eeb47e5a4416c8e978bd3c3c16308",
+      "modified": 1679567960047,
+      "created": 1679567960047,
+      "fileName": "Authentication",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_7b316de5e1c541e5a6c9a30b223b9ce8",
+      "parentId": "env_9d8e859abccf2cb81b15f12d1578ff5a71e09237",
+      "modified": 1679568328874,
+      "created": 1679568328874,
+      "name": "Production",
+      "data": {
+        "protocol": "https",
+        "name": "production",
+        "hostname": "middleby-{{ _.name }}.cloud.akeneo.com",
+        "base_url": "{{ _.protocol }}://{{ _.hostname }}"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "protocol",
+          "name",
+          "hostname",
+          "base_url"
+        ]
+      },
+      "color": "#e21212",
+      "isPrivate": false,
+      "metaSortKey": 1679568328874,
+      "_type": "environment"
+    }
+  ]
+}
